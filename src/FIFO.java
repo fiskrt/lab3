@@ -54,7 +54,7 @@ public class FIFO implements Queue {
         StringBuilder sb = new StringBuilder("Queue: ");
 
         for (Object o : arrayList) {
-            sb.append("(" + o + ") ");
+            sb.append("(" + o + ") "); // o.toString() is redundant.
         }
         return sb.toString();
     }
@@ -64,8 +64,8 @@ public class FIFO implements Queue {
         if (this.getClass() != f.getClass()) {
             throw new ClassCastException("Not the same class.");
         }
-        final int SIZE = this.size();
 
+        final int SIZE = this.size();
         if (SIZE != ((FIFO) f).size()) {
             return false;
         }

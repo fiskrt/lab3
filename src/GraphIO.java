@@ -22,6 +22,8 @@ public class GraphIO {
                 String[] edge = line.split(" ");
                 g.addEdge(Integer.parseInt(edge[0]), Integer.parseInt(edge[1]), Integer.parseInt(edge[2]));
             }
+        } catch (NumberFormatException | IndexOutOfBoundsException e) {
+            throw new IOException("Text-format error!");
         }
     }
 }
