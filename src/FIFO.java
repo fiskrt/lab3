@@ -6,10 +6,6 @@ public class FIFO implements Queue {
     private ArrayList<Object> arrayList = new ArrayList<>();
     private int maxSize = 0;
 
-    public static void main(String[] args) {
-        new BFTmain().main(new String[]{"values.txt"});
-    }
-
     @Override
     public void add(Object item) {
         arrayList.add(item);
@@ -59,10 +55,9 @@ public class FIFO implements Queue {
         return sb.toString();
     }
 
-    @Override
     public boolean equals(Object f) {
-        if (this.getClass() != f.getClass()) {
-            throw new ClassCastException("Not the same class.");
+        if (!(f instanceof FIFO)) {
+            throw new ClassCastException("That is not a FIFO object!");
         }
 
         final int SIZE = this.size();
@@ -79,6 +74,7 @@ public class FIFO implements Queue {
                 return false;
             }
         }
+
         return true;
     }
 }
