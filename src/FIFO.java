@@ -55,6 +55,7 @@ public class FIFO implements Queue {
         return sb.toString();
     }
 
+    @Override
     public boolean equals(Object f) {
         if (!(f instanceof FIFO)) {
             throw new ClassCastException("That is not a FIFO object!");
